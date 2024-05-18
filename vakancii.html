@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вакансии в фитнес-клубе</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Butcherman', cursive;
+        }
+        
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5) !important; 
+            font-family: 'Butcherman', cursive;
+        }
+        
+        .container h1 {
+            margin-top: 100px;
+        }
+        
+        .navbar-brand {
+            color: white !important; 
+            display: inline;
+        }
+        
+        .navbar-nav .nav-link {
+            font-family: 'Butcherman', cursive; 
+            color: white !important;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #D8D9E9 !important;
+        }
+        
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .card-deck {
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 1) !important; 
+            border: none;
+        }
+        
+        h1 {
+            color: #f5f5f5;
+        }
+        
+        .container {
+            background-color: transparent !important;
+        }
+        
+        html {
+            background-image: url('фы.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        body {
+            background-color: transparent;
+        }
+        
+        .card-body {
+            background-color: transparent !important;
+        }
+        
+        .footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            font-family: 'Butcherman', cursive;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .btn-dark {
+            color: #fff;
+            background-color: #343a40;
+            border-color: #343a40;
+        }
+        
+        .btn-dark:hover {
+            color: #fff;
+            background-color: #23272b;
+            border-color: #1d2124;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="#">Фитнес клуб</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Расписание</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Групповые программы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trainers.php">Тренеры</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vakancii.html">Вакансии</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Атрибутика</a></li>
+                    <li class="nav-item"><a class="nav-link" href="personal_cabinet.php">Личный кабинет</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <div class="container mt-5">
+        <h1> Вакансии <p>Здесь вы можете ознакомиться с нашими актуальными вакансиями.</p></h1>
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Тренер по фитнесу</h5>
+                    <p class="card-text">Мы ищем энергичного тренера с опытом работы для занятий с нашими клиентами.</p>
+                    <p class="card-text"><small class="text-muted">Опубликовано: 21 марта 2024</small></p>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#registrationModal1"> Оставить заявку</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Инструктор по аквааэробике</h5>
+                    <p class="card-text">Ищем профессионала в области аквааэробики для проведения занятий в бассейне.</p>
+                    <p class="card-text"><small class="text-muted">Опубликовано: 21 марта 2024</small></p>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#registrationModal2"> Оставить заявку</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Персональный тренер</h5>
+                    <p class="card-text">Требуется опытный персональный тренер для индивидуальных тренировок с клиентами.</p>
+                    <p class="card-text"><small class="text-muted">Опубликовано: 21 марта 2024</small></p>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#registrationModal3"> Оставить заявку</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Массажист</h5>
+                    <p class="card-text">Ищем массажиста с сертификатами и опытом для предоставления массажных процедур.</p>
+                    <p class="card-text"><small class="text-muted">Опубликовано: 21 марта 2024</small></p>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#registrationModal4"> Оставить заявку</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 1 -->
+    <!-- Модальное окно 1 -->
+    <div class="modal fade" id="registrationModal1" tabindex="-1" role="dialog" aria-labelledby="registrationModal1Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registrationModal1Label">Регистрация на вакансию Тренер по фитнесу</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Форма регистрации -->
+                    <form action="submit_application.php" method="post">
+                        <input type="hidden" name="vacancyTitle" value="fitness_trainer"> <!-- Изменяем значение на название вакансии -->
+                        <div class="form-group">
+                            <label for="fullName1">ФИО</label>
+                            <input type="text" class="form-control" id="fullName1" name="fullName" placeholder="Введите ваше ФИО">
+                        </div>
+                        <div class="form-group">
+                            <label for="email1">Email</label>
+                            <input type="email" class="form-control" id="email1" name="email" placeholder="Введите ваш email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone1">Телефон</label>
+                            <input type="tel" class="form-control" id="phone1" name="phone" placeholder="Введите ваш номер телефона">
+                        </div>
+                        <div class="form-group">
+                            <label for="specialization1">Специализация</label>
+                            <select class="form-control" id="specialization1" name="specialization">
+                                <option value="Силовые тренировки">Силовые тренировки</option>
+                                <option value="Кардио тренировки">Кардио тренировки</option>
+                                <option value="Групповые занятия">Групповые занятия</option>
+                                <!-- Добавьте другие варианты специализации тренера здесь -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="resume1">Ссылки на профили в соцсетях</label>
+                            <textarea class="form-control" id="resume1" name="resume" rows="4" placeholder="Введите ваши ссылки"></textarea>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                            <button type="submit" class="btn btn-dark">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<!-- Модальное окно 2 -->
+<!-- Модальное окно 2 -->
+<div class="modal fade" id="registrationModal2" tabindex="-1" role="dialog" aria-labelledby="registrationModal2Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registrationModal2Label">Регистрация на вакансию Инструктор по аквааэробике</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Форма регистрации -->
+                <form action="submit_application.php" method="post">
+                    <input type="hidden" name="vacancyTitle" value="aqua_aerobics_instructor"> <!-- Изменяем значение на название вакансии -->
+                    <div class="form-group">
+                        <label for="fullName2">ФИО</label>
+                        <input type="text" class="form-control" id="fullName2" name="fullName" placeholder="Введите ваше ФИО">
+                    </div>
+                    <div class="form-group">
+                        <label for="email2">Email</label>
+                        <input type="email" class="form-control" id="email2" name="email" placeholder="Введите ваш email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone2">Телефон</label>
+                        <input type="tel" class="form-control" id="phone2" name="phone" placeholder="Введите ваш номер телефона">
+                    </div>
+                    <div class="form-group">
+                        <label for="specialization2">Специализация</label>
+                        <select class="form-control" id="specialization2" name="specialization">
+                            <option value="Аквааэробика">Аквааэробика</option>
+                            <option value="Гидроциклы">Гидроциклы</option>
+                            <!-- Добавьте другие варианты специализации для инструктора по аквааэробике здесь -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resume2">Ссылки на профили в соцсетях</label>
+                        <textarea class="form-control" id="resume2" name="resume" rows="4" placeholder="Введите ваши сылки"></textarea>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button type="submit" class="btn btn-dark">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Модальное окно 3 -->
+<!-- Модальное окно 3 -->
+<div class="modal fade" id="registrationModal3" tabindex="-1" role="dialog" aria-labelledby="registrationModal3Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registrationModal3Label">Регистрация на вакансию Персональный тренер</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Форма регистрации -->
+                <form action="submit_application.php" method="post">
+                    <input type="hidden" name="vacancyTitle" value="Trainer"> <!-- Изменяем значение на название вакансии -->
+                    <div class="form-group">
+                        <label for="fullName3">ФИО</label>
+                        <input type="text" class="form-control" id="fullName3" name="fullName" placeholder="Введите ваше ФИО">
+                    </div>
+                    <div class="form-group">
+                        <label for="email3">Email</label>
+                        <input type="email" class="form-control" id="email3" name="email" placeholder="Введите ваш email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone3">Телефон</label>
+                        <input type="tel" class="form-control" id="phone3" name="phone" placeholder="Введите ваш номер телефона">
+                    </div>
+                    <div class="form-group">
+                        <label for="specialization3">Специализация</label>
+                        <select class="form-control" id="specialization3" name="specialization">
+                            <option value="Силовые тренировки">Силовые тренировки</option>
+                            <option value="Кардио тренировки">Кардио тренировки</option>
+                            <option value="Групповые занятия">Групповые занятия</option>
+                            <!-- Добавьте другие варианты специализации для персонального тренера здесь -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resume3">Ссылки на профили в соцсетях</label>
+                        <textarea class="form-control" id="resume3" name="resume" rows="4" placeholder="Введите ваши ссылки "></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button type="submit" class="btn btn-dark">Отправить</button>
+                    </div>
+                 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Модальное окно 4 -->
+<!-- Модальное окно 4 -->
+<div class="modal fade" id="registrationModal4" tabindex="-1" role="dialog" aria-labelledby="registrationModal4Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registrationModal4Label">Регистрация на вакансию Массажист</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Форма регистрации -->
+                <form action="submit_application.php" method="post">
+                    <input type="hidden" name="vacancyTitle" value="massage_therapist"> <!-- Изменяем значение на название вакансии -->
+                    <div class="form-group">
+                        <label for="fullName4">ФИО</label>
+                        <input type="text" class="form-control" id="fullName4" name="fullName" placeholder="Введите ваше ФИО">
+                    </div>
+                    <div class="form-group">
+                        <label for="email4">Email</label>
+                        <input type="email" class="form-control" id="email4" name="email" placeholder="Введите ваш email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone4">Телефон</label>
+                        <input type="tel" class="form-control" id="phone4" name="phone" placeholder="Введите ваш номер телефона">
+                    </div>
+                    <!-- Добавление поля для специализации -->
+                    <div class="form-group">
+                        <label for="specialization4">Специализация</label>
+                        <select class="form-control" id="specialization4" name="specialization">
+                            <option value="Общий массаж">Общий массаж</option>
+                            <option value="Спортивный массаж">Спортивный массаж</option>
+                            <option value="Релаксационный массаж">Релаксационный массаж</option>
+                            <!-- Добавьте другие варианты специализации для массажиста здесь -->
+                        </select>
+                    </div>
+                    <!-- Конец добавления поля для специализации -->
+                    <div class="form-group">
+                        <label for="resume4">Ссылки на профили в соцсетях</label>
+                        <textarea class="form-control" id="resume4" name="resume" rows="4" placeholder="Введите ваши ссылки"></textarea>
+                    </div>
+                 
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button type="submit" class="btn btn-dark">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <span>© 2024 Ваш Фитнес Клуб</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Администраторский форум</title>
+    <!-- Подключаем стили Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Ваши собственные стили -->
+    <style>
+        /* Здесь можете добавить свои стили */
+    </style>
+</head>
+<body>
+
+    <!-- Навигационная панель (если нужно) -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="#">Администраторский форум</a>
+            <!-- Здесь можете добавить дополнительные пункты меню или функционал -->
+        </div>
+    </nav>
+
+    <!-- Контент страницы -->
+    <div class="container mt-5">
+        <h1>Форум для администратора</h1>
+        <!-- Здесь будет отображаться содержимое форума -->
+        <div id="adminForumContent">
+            <!-- Загрузка содержимого форума будет происходить динамически с помощью JavaScript -->
+        </div>
+    </div>
+
+    <!-- Модальное окно для добавления новой темы на форум -->
+    <div class="modal fade" id="addTopicModal" tabindex="-1" role="dialog" aria-labelledby="addTopicModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTopicModalLabel">Добавить новую тему</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addTopicForm">
+                        <div class="form-group">
+                            <label for="topicTitle">Заголовок темы</label>
+                            <input type="text" class="form-control" id="topicTitle" placeholder="Введите заголовок темы">
+                        </div>
+                        <div class="form-group">
+                            <label for="topicContent">Содержание темы</label>
+                            <textarea class="form-control" id="topicContent" rows="3" placeholder="Введите содержание темы"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Добавить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключаем скрипты -->
+    <!-- jQuery (необходим для работы Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Popper.js (необходим для работы Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Здесь будет ваш JavaScript код для работы с форумом, например, добавление тем, загрузка содержимого и т. д.
+        // Не забудьте добавить обработчики событий для кнопок и форм
+    </script>
+</body>
+</html>

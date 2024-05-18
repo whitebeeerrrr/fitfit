@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    background-image: url('да_out.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    font-family: 'Butcherman', cursive;
+}
+
+.navbar-brand {
+    color: white !important;
+    display: inline;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Butcherman', cursive;
+    color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color:#D8D9E9  !important;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.ag-format-container {
+    width: 1142px;
+    margin: 0 auto;
+}
+
+.ag-courses_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+#workoutResultsModal.modal-dialog {
+    max-width: 80%;
+}
+
+.ag-courses_item {
+    -ms-flex-preferred-size: calc(33.33333% - 30px);
+    flex-basis: calc(33.33333% - 30px);
+    margin: 0 15px 30px;
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.ag-courses-item_link {
+    display: block;
+    padding: 30px 20px;
+    background-color: #121212;
+    overflow: hidden;
+    position: relative;
+}
+
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_bg {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+}
+
+.ag-courses-item_title {
+    min-height: 87px;
+    margin: 0 0 25px;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 30px;
+    color: #FFF;
+    z-index: 2;
+    position: relative;
+}
+
+.ag-courses-item_date-box {
+    font-size: 18px;
+    color: #FFF;
+    z-index: 2;
+    position: relative;
+}
+
+.ag-courses-item_date {
+    font-weight: bold;
+    color: #f9b234;
+    -webkit-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease
+}
+
+.ag-courses-item_bg {
+    height: 128px;
+    width: 128px;
+    background-color: #f9b234;
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+    border-radius: 50%;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+    background-color: #3ecd5e;
+}
+
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+    background-color: #e44002;
+}
+
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+    background-color: #952aff;
+}
+
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+    background-color: #cd3e94;
+}
+
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+    background-color: #4c49ea;
+}
+
+@media only screen and (max-width: 979px) {
+    .ag-courses_item {
+        -ms-flex-preferred-size: calc(50% - 30px);
+        flex-basis: calc(50% - 30px);
+    }
+    .ag-courses-item_title {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .ag-format-container {
+        width: 96%;
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    .ag-courses_item {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
+    .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+        font-size: 24px;
+    }
+    .ag-courses-item_link {
+        padding: 22px 40px;
+    }
+    .ag-courses-item_date-box {
+        font-size: 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="#">Фитнес клуб</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Расписание</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Групповые программы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trainers.php">Тренеры</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vakancii.html">Вакансии</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Атрибутика</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Личный кабинет</a></li>
+                    <form method="post" action="logout.php">
+                        <button type="submit" class="btn btn-primary" name="logout">Выйти</button>
+                    </form>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav> 
+
+    <div class="ag-format-container">
+        <div class="ag-courses_box">
+            <!-- Карточка для отображения данных пользователя -->
+            <div class="ag-courses_item" data-toggle="modal" data-target="#userProfileModal" id="userProfileCard">
+                <a href="#" class="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">
+                        Ваши данные
+                    </div>
+                </a>
+            </div>
+            
+    
+            <!-- Карточка для отображения результатов тренировки -->
+            <div class="ag-courses_item" data-toggle="modal" data-target="#workoutResultsModal">
+                <a href="#" class="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">
+                        Результаты тренировок
+                    </div>
+                </a>
+            </div>    <!-- Карточка для отображения результатов тренировки -->
+            <div class="ag-courses_item" data-toggle="modal" data-target="#supportModal">
+                <a href="#" class="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">
+                        Служба онлайн-поддержки
+                    </div>
+                </a>
+            </div>
+            
+            
+    
+            <!-- Карточка для отображения форума -->
+            <div class="ag-courses_item" data-toggle="modal" data-target="#forumModal">
+                <a href="#" class="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">
+                        Заметки
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Модальное окно "Служба онлайн-поддержки" -->
+<div class="modal fade" id="supportModal" tabindex="-1" role="dialog" aria-labelledby="supportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="supportModalLabel">Служба онлайн-поддержки</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Для обращения в чат поддержки необходимо быть зарегистрированным пользователем.</p>
+                <p>Если у вас еще нет аккаунта, вы можете зарегистрироваться прямо сейчас.</p>
+                <p>После регистрации вы сможете получить помощь от нашей службы онлайн-поддержки.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                <a href="ndex.php" class="btn btn-primary">Зарегистрироваться</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Модальное окно для отображения профиля пользователя -->
+    <div class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="userProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userProfileModalLabel">Мой профиль</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Здесь будут отображаться данные пользователя -->
+                    <div id="userProfileData">
+                        <p>ФИО: Иванов Иван Иванович</p>
+                        <p>Телефон: +7 (123) 456-7890</p>
+                        <p>Email: example@example.com</p>
+                    </div>
+                    <!-- Форма редактирования профиля -->
+                    <form id="editProfileForm">
+                        <div class="form-group">
+                            <label for="fullName">ФИО</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Введите ваше ФИО">
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Номер телефона</label>
+                            <input type="tel" class="form-control" id="phoneNumber" placeholder="Введите ваш номер телефона">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email адрес</label>
+                            <input type="email" class="form-control" id="email" placeholder="Введите ваш email адрес">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Модальное окно для отображения результатов тренировок -->
+    <div class="modal fade" id="workoutResultsModal" tabindex="-1" role="dialog" aria-labelledby="workoutResultsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="workoutResultsModalLabel">Результаты тренировок</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Здесь будет таблица результатов тренировок -->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Дата</th>
+                                    <th>Вид тренировки</th>
+                                    <th>Длительность</th>
+                                    <th>Результат</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody id="workoutResultsTableBody">
+                                <!-- Здесь будут строки с результатами тренировок -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+ 
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addWorkoutResultModal">Добавить результат</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+<!-- Модальное окно для отображения форума -->
+<div class="modal fade" id="forumModal" tabindex="-1" role="dialog" aria-labelledby="forumModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #007bff; color: #fff; border-bottom: none;">
+                <h5 class="modal-title" id="forumModalLabel">Форум</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="forumContent" style="font-family: Arial, sans-serif;">
+                <!-- Здесь будет загружаться содержимое форума -->
+                <p style="font-size: 16px; line-height: 1.6;">Загрузка содержимого форума...</p>
+            </div>
+            <div class="modal-footer" style="background-color: #f8f9fa; border-top: none;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color: #fff; background-color: #6c757d; border-color: #6c757d;">Закрыть</button>
+                <!-- Дополнительные кнопки или функционал могут быть добавлены здесь -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Модальное окно для добавления результата тренировки -->
+    <div class="modal fade" id="addWorkoutResultModal" tabindex="-1" role="dialog" aria-labelledby="addWorkoutResultModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addWorkoutResultModalLabel">Добавить результат тренировки</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Форма для добавления результата тренировки -->
+                    <form id="addWorkoutResultForm">
+                        <div class="form-group">
+                            <label for="workoutDate">Дата</label>
+                            <input type="date" class="form-control" id="workoutDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="workoutType">Вид тренировки</label>
+                            <input type="text" class="form-control" id="workoutType" placeholder="Введите вид тренировки">
+                        </div>
+                        <div class="form-group">
+                            <label for="workoutDuration">Длительность</label>
+                            <input type="text" class="form-control" id="workoutDuration" placeholder="Введите длительность тренировки">
+                        </div>
+                        <div class="form-group">
+                            <label for="workoutResult">Результат</label>
+                            <input type="text" class="form-control" id="workoutResult" placeholder="Введите результат тренировки">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Добавить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Модальное окно для чата -->
+<!-- Модальное окно для чата -->
+<div class="modal fade" id="topicChatModal" tabindex="-1" role="dialog" aria-labelledby="topicChatModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="topicChatModalLabel">Чат по теме</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Область для отображения сообщений -->
+                <div id="chatMessages"></div>
+                <!-- Поле ввода сообщения -->
+                <div class="input-group mt-3">
+                    <input type="text" class="form-control" id="messageInput" placeholder="Введите сообщение...">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" id="sendMessageBtn">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <span>© 2024 Ваш Фитнес Клуб</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Функция добавления результата тренировки
+        $('#addWorkoutResultForm').submit(function(event) {
+            event.preventDefault();
+            var workoutDate = $('#workoutDate').val();
+            var workoutType = $('#workoutType').val();
+            var workoutDuration = $('#workoutDuration').val();
+            var workoutResult = $('#workoutResult').val();
+
+            // Создаем новую строку для таблицы с результатами тренировок
+            var newRow = '<tr>' +
+                '<td>' + workoutDate + '</td>' +
+                '<td>' + workoutType + '</td>' +
+                '<td>' + workoutDuration + '</td>' +
+                '<td>' + workoutResult + '</td>' +
+                '<td>' +
+                '<button class="btn btn-primary btn-edit">Редактировать</button> ' +
+                '<button class="btn btn-danger btn-delete">Удалить</button>' +
+                '</td>' +
+                '</tr>';
+
+            // Добавляем новую строку в таблицу
+            $('#workoutResultsTableBody').append(newRow);
+
+            // Очищаем форму после добавления результата тренировки
+            $('#addWorkoutResultModal').modal('hide');
+            $('#addWorkoutResultForm')[0].reset();
+        });
+
+        // Функция удаления строки с результатом тренировки
+        $(document).on('click', '.btn-delete', function() {
+            $(this).closest('tr').remove();
+        });
+
+        // Функция для загрузки данных пользователя и их отображения в форме редактирования
+        function loadUserProfileData() {
+            // Здесь нужно добавить ваш код для загрузки данных пользователя из базы данных или другого источника
+            // Предположим, что данные загружаются и обновляют переменные fullName, phoneNumber и email
+            var fullName = "Иванов Иван Иванович";
+            var phoneNumber = "+7 (123) 456-7890";
+            var email = "example@example.com";
+    
+            // Обновляем поля формы редактирования с загруженными данными
+            $('#fullName').val(fullName);
+            $('#phoneNumber').val(phoneNumber);
+            $('#email').val(email);
+        }
+    
+        // Вызываем функцию загрузки данных пользователя при открытии модального окна
+        $('#userProfileModal').on('shown.bs.modal', function () {
+            loadUserProfileData();
+        });
+    
+        // Функция для сохранения отредактированных данных пользователя
+        $('#editProfileForm').submit(function(event) {
+            event.preventDefault();
+    
+            // Получаем значения полей формы
+            var fullName = $('#fullName').val();
+            var phoneNumber = $('#phoneNumber').val();
+            var email = $('#email').val();
+    
+            // Здесь нужно добавить ваш код для сохранения отредактированных данных в базу данных или другое хранилище
+            // В данном примере мы просто выводим данные в консоль
+            console.log("Имя:", fullName);
+            console.log("Телефон:", phoneNumber);
+            console.log("Email:", email);
+    
+            // Обновляем данные на карточке
+            $('#userProfileData').html(
+                '<p>ФИО: ' + fullName + '</p>' +
+                '<p>Телефон: ' + phoneNumber + '</p>' +
+                '<p>Email: ' + email + '</p>'
+            );
+    
+            // Закрываем модальное окно после сохранения данных
+            $('#userProfileModal').modal('hide');
+        });
+        // Функция для загрузки содержимого форума
+    function loadForumContent() {
+        // Здесь можно добавить код для загрузки содержимого форума из базы данных или другого источника
+        // В данном примере просто загрузим статичное содержимое
+        var forumContent = '<ul>' +
+            '<li>Тема 1</li>' +
+            '<li>Тема 2</li>' +
+            '<li>Тема 3</li>' +
+            '</ul>';
+
+        // Вставляем загруженное содержимое в модальное окно форума
+        $('#forumContent').html(forumContent);
+    }
+
+    // Вызываем функцию загрузки содержимого форума при открытии модального окна
+    $('#forumModal').on('shown.bs.modal', function () {
+        loadForumContent();
+    });
+    // Функция для загрузки содержимого форума
+function loadForumContent() {
+    // Здесь можно добавить код для загрузки содержимого форума из базы данных или другого источника
+    // В данном примере просто загружаем массив тем
+    var forumTopics = ['Тема 1',];
+
+    // Генерируем HTML-список тем
+    var forumContent = '<ul>';
+    forumTopics.forEach(function(topic) {
+        forumContent += '<li><a href="#" class="topic-link" data-topic="' + topic + '">' + topic + '</a></li>';
+    });
+    forumContent += '</ul>';
+
+    // Вставляем загруженное содержимое в модальное окно форума
+    $('#forumContent').html(forumContent);
+
+    // Добавляем обработчик события для каждой темы
+    $('.topic-link').click(function(e) {
+        e.preventDefault();
+        var topic = $(this).data('topic');
+        openTopicChat(topic);
+    });
+}
+
+// Функция для открытия чата по выбранной теме
+function openTopicChat(topic) {
+    // Здесь можно добавить код для загрузки чата по выбранной теме из базы данных или другого источника
+    // В данном примере просто отображаем название темы в модальном окне
+    $('#topicChatModalLabel').text('Чат по теме: ' + topic);
+    $('#topicChatContent').html('Чат для темы "' + topic + '"');
+    $('#topicChatModal').modal('show');
+}
+
+// Вызываем функцию загрузки содержимого форума при открытии модального окна
+$('#forumModal').on('shown.bs.modal', function () {
+    loadForumContent();
+});
+// Функция для отправки сообщения
+function sendMessage() {
+    // Получаем текст сообщения из поля ввода
+    var message = $('#messageInput').val();
+    // Очищаем поле ввода
+    $('#messageInput').val('');
+    // Создаем HTML для нового сообщения
+    var newMessage = '<div class="message"><strong>Пользователь:</strong> ' + message + '</div>';
+    // Добавляем новое сообщение в область для отображения сообщений
+    $('#chatMessages').append(newMessage);
+}
+
+// Добавляем обработчик события для кнопки отправки сообщения
+$('#sendMessageBtn').click(function() {
+    sendMessage();
+});
+
+// Добавляем обработчик события для нажатия Enter в поле ввода сообщения
+$('#messageInput').keypress(function(e) {
+    if (e.which === 13) {
+        sendMessage();
+    }
+});
+
+    </script>
+</body>
+</html>
+
+
